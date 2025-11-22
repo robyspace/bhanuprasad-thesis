@@ -1,0 +1,39 @@
+{
+    "timestamp": "2025-11-18 13:32:46",
+    "dataset": "CSE-CIC-IDS-2018",
+    "model_type": "Deep Learning MLP (Feedforward)",
+    "architecture": "deep",
+    "config": {
+        "batch_size": 512,
+        "epochs": 50,
+        "learning_rate": 0.001,
+        "num_features": 69
+    },
+    "results": {
+        "accuracy": 0.8696141049391249,
+        "precision": 0.9768513776503124,
+        "recall": 0.7423089646046973,
+        "f1_score": 0.8435810399920392,
+        "roc_auc": 0.9397491594725986,
+        "fpr": 0.01582910173349676,
+        "confusion_matrix": {
+            "tn": 56206,
+            "fp": 904,
+            "fn": 13243,
+            "tp": 38148
+        },
+        "avg_latency_ms": 0.062070160217282344,
+        "training_time_seconds": 302.36118173599243
+    },
+    "training_samples": 506335,
+    "validation_samples": 108501,
+    "test_samples": 108501,
+    "comparison_with_lstm": {
+        "lstm_accuracy": 0.51,
+        "mlp_accuracy": 0.8696141049391249,
+        "improvement_percent": 70.51256959590685,
+        "lstm_auc": 0.501,
+        "mlp_auc": 0.9397491594725986,
+        "auc_improvement_percent": 87.5746825294608
+    }
+}

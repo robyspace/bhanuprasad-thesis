@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-11-18 13:36:23",
+  "dataset": "CSE-CIC-IDS-2018",
+  "version": "1.0.0",
+  "models": {
+    "random_forest": {
+      "accuracy": 0.8770979069317334,
+      "auc": 0.9549760253873127,
+      "precision": 0.935,
+      "recall": 0.796,
+      "f1_score": 0.86,
+      "inference_ms": 36.25,
+      "file": "random_forest_model.pkl",
+      "format": "pickle"
+    },
+    "xgboost": {
+      "accuracy": 0.8760933078957798,
+      "auc": 0.9397491594725986,
+      "precision": 0.955,
+      "recall": 0.775,
+      "f1_score": 0.856,
+      "inference_ms": 6.97,
+      "file": "xgboost_model.json",
+      "format": "json"
+    },
+    "deep_mlp": {
+      "accuracy": 0.8709965944290161,
+      "auc": 0.9408037662506104,
+      "inference_ms": 15.0,
+      "file": "deep_mlp_model.h5",
+      "format": "keras_h5"
+    }
+  },
+  "deployment_config": {
+    "primary_model": "random_forest",
+    "secondary_model": "xgboost",
+    "ensemble_weights": {
+      "random_forest": 0.5,
+      "xgboost": 0.5
+    },
+    "decision_threshold": 0.5,
+    "use_ensemble": true,
+    "tertiary_model": "deep_mlp"
+  },
+  "preprocessing": {
+    "scaler": "StandardScaler",
+    "scaler_file": "scaler.pkl",
+    "features_count": 69,
+    "feature_names_file": "feature_names.pkl",
+    "scaling_method": "standard_normalization"
+  },
+  "training_data": {
+    "train_samples": 506335,
+    "validation_samples": 108501,
+    "test_samples": 108501,
+    "total_samples": 723337,
+    "benign_percent": 52.64,
+    "attack_percent": 47.36
+  }
+}
