@@ -218,7 +218,9 @@ def predict():
                 'xgboost': float(xgb_proba)
             }
 
-        final_prediction = int(final_proba > 0.5)
+        # Get threshold from metadata or use default (can be adjusted for sensitivity)
+        threshold = metadata.get('deployment_config', {}).get('decision_threshold', 0.5)
+        final_prediction = int(final_proba > threshold)
         prediction_label = 'Attack' if final_prediction == 1 else 'Benign'
 
         inference_time = (time.time() - start_time) * 1000  # ms
@@ -330,7 +332,9 @@ def predict_batch():
                 xgb_proba * weights['xgboost']
             )
 
-        predictions = (final_proba > 0.5).astype(int).tolist()
+        # Get threshold from metadata or use default
+        threshold = metadata.get('deployment_config', {}).get('decision_threshold', 0.5)
+        predictions = (final_proba > threshold).astype(int).tolist()
 
         inference_time = (time.time() - start_time) * 1000
 
