@@ -38,7 +38,7 @@
       "random_forest": 0.5,
       "xgboost": 0.5
     },
-    "decision_threshold": 0.5,
+    "decision_threshold": 0.35,
     "use_ensemble": true,
     "tertiary_model": "deep_mlp"
   },
