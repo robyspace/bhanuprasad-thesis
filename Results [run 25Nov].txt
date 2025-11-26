@@ -1,0 +1,1280 @@
+Last login: Tue Nov 25 14:39:55 on ttys001
+robyspace@Mac bhanuprasad-thesis % 172.18.0.2 - - [25/Nov/2025:14:19:11 +0000] "GET /metrics HTTP/1.1" 200 3045 "-" "Prometheus/3.7.3"
+172.18.0.2 - - [25/Nov/2025:14:19:22 +0000] "GET /metrics HTTP/1.1" 200 3045 "-" "Prometheus/3.7.3"
+172.18.0.2 - - [25/Nov/2025:14:19:37 +0000] "GET /metrics HTTP/1.1" 200 3045 "-" "Prometheus/3.7.3"
+172.18.0.2 - - [25/Nov/2025:14:19:52 +0000] "GET /metrics HTTP/1.1" 200 3045 "-" "Prometheus/3.7.3"
+172.18.0.2 - - [25/Nov/2025:14:20:07 +0000] "GET /metrics HTTP/1.1" 200 3043 "-" "Prometheus/3.7.3"
+[2025-11-25 14:19:07 +0000] [1] [INFO] Starting gunicorn 21.2.0
+[2025-11-25 14:19:07 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2025-11-25 14:19:07 +0000] [1] [INFO] Using worker: sync
+[2025-11-25 14:19:07 +0000] [7] [INFO] Booting worker with pid: 7
+[2025-11-25 14:19:07 +0000] [8] [INFO] Booting worker with pid: 8
+[2025-11-25 14:19:07 +0000] [9] [INFO] Booting worker with pid: 9
+[2025-11-25 14:19:07 +0000] [11] [INFO] Booting worker with pid: 11
+[2025-11-25 14:19:10,628] INFO in app: Loading models...
+[2025-11-25 14:19:10,629] INFO in app: ✓ Metadata loaded
+[2025-11-25 14:19:10,629] INFO in app: ✓ Scaler loaded
+[2025-11-25 14:19:10,629] INFO in app: ✓ Feature names loaded (69 features)
+[2025-11-25 14:19:10,771] INFO in app: Loading models...
+[2025-11-25 14:19:10,773] INFO in app: ✓ Metadata loaded
+[2025-11-25 14:19:10,774] INFO in app: ✓ Scaler loaded
+[2025-11-25 14:19:10,774] INFO in app: ✓ Feature names loaded (69 features)
+[2025-11-25 14:19:10,881] INFO in app: Loading models...
+[2025-11-25 14:19:10,882] INFO in app: ✓ Metadata loaded
+[2025-11-25 14:19:10,884] INFO in app: ✓ Scaler loaded
+[2025-11-25 14:19:10,884] INFO in app: ✓ Feature names loaded (69 features)
+[2025-11-25 14:19:10,999] INFO in app: Loading models...
+[2025-11-25 14:19:11,000] INFO in app: ✓ Metadata loaded
+[2025-11-25 14:19:11,001] INFO in app: ✓ Scaler loaded
+[2025-11-25 14:19:11,001] INFO in app: ✓ Feature names loaded (69 features)
+[2025-11-25 14:19:11,652] INFO in app: ✓ Random Forest loaded
+[2025-11-25 14:19:11,661] INFO in app: ✓ Random Forest loaded
+[2025-11-25 14:19:11,687] INFO in app: ✓ Random Forest loaded
+[2025-11-25 14:19:11,724] INFO in app: ✓ XGBoost loaded
+[2025-11-25 14:19:11,727] INFO in app: MLP model not found or TensorFlow not installed - using RF + XGB only
+[2025-11-25 14:19:11,728] INFO in app: ============================================================
+[2025-11-25 14:19:11,728] INFO in app: ALL MODELS LOADED SUCCESSFULLY!
+[2025-11-25 14:19:11,728] INFO in app: ============================================================
+[2025-11-25 14:19:11,735] INFO in app: ✓ XGBoost loaded
+[2025-11-25 14:19:11,738] INFO in app: MLP model not found or TensorFlow not installed - using RF + XGB only
+[2025-11-25 14:19:11,738] INFO in app: ============================================================
+[2025-11-25 14:19:11,739] INFO in app: ALL MODELS LOADED SUCCESSFULLY!
+[2025-11-25 14:19:11,739] INFO in app: ============================================================
+[2025-11-25 14:19:11,759] INFO in app: ✓ XGBoost loaded
+[2025-11-25 14:19:11,759] INFO in app: MLP model not found or TensorFlow not installed - using RF + XGB only
+[2025-11-25 14:19:11,760] INFO in app: ============================================================
+[2025-11-25 14:19:11,760] INFO in app: ALL MODELS LOADED SUCCESSFULLY!
+[2025-11-25 14:19:11,760] INFO in app: ============================================================
+[2025-11-25 14:19:11,793] INFO in app: ✓ Random Forest loaded
+[2025-11-25 14:19:11,818] INFO in app: ✓ XGBoost loaded
+[2025-11-25 14:19:11,819] INFO in app: MLP model not found or TensorFlow not installed - using RF + XGB only
+[2025-11-25 14:19:11,819] INFO in app: ============================================================
+[2025-11-25 14:19:11,819] INFO in app: ALL MODELS LOADED SUCCESSFULLY!
+[2025-11-25 14:19:11,819] INFO in app: ============================================================
+172.18.0.2 - - [25/Nov/2025:14:20:22 +0000] "GET /metrics HTTP/1.1" 200 3043 "-" "Prometheus/3.7.3"
+172.18.0.2 - - [25/Nov/2025:14:20:37 +0000] "GET /metrics HTTP/1.1" 200 3045 "-" "Prometheus/3.7.3"
+
+robyspace@Mac bhanuprasad-thesis % curl http://3.254.149.91:5000/health
+{"features_count":69,"models_loaded":{"deep_mlp":false,"random_forest":true,"xgboost":true},"status":"healthy","timestamp":1764080527.6969082,"version":"1.0.0"}
+robyspace@Mac bhanuprasad-thesis % curl http://3.254.149.91:5000/
+{"endpoints":{"batch_prediction":"/predict/batch (POST)","health":"/health","metrics":"/metrics (if Prometheus enabled)","model_info":"/model/info","single_prediction":"/predict (POST)"},"models":{"deep_mlp":false,"random_forest":true,"xgboost":true},"service":"IDS API - Network Intrusion Detection System","status":"running","version":"1.0.0"}
+robyspace@Mac bhanuprasad-thesis % curl http://3.254.149.91:5000/model/info
+
+
+{"dataset":"CSE-CIC-IDS-2018","deployment_config":{"decision_threshold":0.5,"ensemble_weights":{"random_forest":0.5,"xgboost":0.5},"primary_model":"random_forest","secondary_model":"xgboost","tertiary_model":"deep_mlp","use_ensemble":true},"models":{"deep_mlp":{"accuracy":0.8709965944290161,"auc":0.9408037662506104,"file":"deep_mlp_model.h5","format":"keras_h5","inference_ms":15.0},"random_forest":{"accuracy":0.8770979069317334,"auc":0.9549760253873127,"f1_score":0.86,"file":"random_forest_model.pkl","format":"pickle","inference_ms":36.25,"precision":0.935,"recall":0.796},"xgboost":{"accuracy":0.8760933078957798,"auc":0.9397491594725986,"f1_score":0.856,"file":"xgboost_model.json","format":"json","inference_ms":6.97,"precision":0.955,"recall":0.775}},"preprocessing":{"feature_names_file":"feature_names.pkl","features_count":69,"scaler":"StandardScaler","scaler_file":"scaler.pkl","scaling_method":"standard_normalization"},"timestamp":"2025-11-18 13:36:23","training_data":{"attack_percent":47.36,"benign_percent":52.64,"test_samples":108501,"total_samples":723337,"train_samples":506335,"validation_samples":108501},"version":"1.0.0"}
+robyspace@Mac bhanuprasad-thesis % http://3.254.149.91:9090
+zsh: no such file or directory: http://3.254.149.91:9090
+robyspace@Mac bhanuprasad-thesis %      http://3.254.149.91:5000/health
+zsh: no such file or directory: http://3.254.149.91:5000/health
+robyspace@Mac bhanuprasad-thesis %      POST http://3.254.149.91:5000/predict
+zsh: command not found: POST
+robyspace@Mac bhanuprasad-thesis % curl -X POST http://3.254.149.91:5000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "features": {
+      "Dst Port": 80,
+      "Protocol": 6,
+      "Flow Duration": 100000,
+      "Tot Fwd Pkts": 10,
+      "Tot Bwd Pkts": 8,
+      "TotLen Fwd Pkts": 1500,
+      "TotLen Bwd Pkts": 3200,
+      "Fwd Pkt Len Max": 1460,
+      "Fwd Pkt Len Min": 0,
+      "Fwd Pkt Len Mean": 150.0,
+      "Fwd Pkt Len Std": 200.0,
+      "Bwd Pkt Len Max": 1460,
+      "Bwd Pkt Len Min": 0,
+      "Bwd Pkt Len Mean": 400.0,
+      "Bwd Pkt Len Std": 300.0,
+      "Flow Byts/s": 50000.0,
+      "Flow Pkts/s": 180.0,
+      "Flow IAT Mean": 5555.0,
+      "Flow IAT Std": 10000.0,
+      "Flow IAT Max": 50000,
+      "Flow IAT Min": 0,
+      "Fwd IAT Tot": 90000,
+      "Fwd IAT Mean": 10000.0,
+      "Fwd IAT Std": 15000.0,
+      "Fwd IAT Max": 50000,
+      "Fwd IAT Min": 0,
+      "Bwd IAT Tot": 70000,
+      "Bwd IAT Mean": 10000.0,
+      "Bwd IAT Std": 12000.0,
+      "Bwd IAT Max": 40000,
+      "Bwd IAT Min": 0,
+      "Fwd PSH Flags": 0,
+      "Bwd PSH Flags": 0,
+      "Fwd URG Flags": 0,
+      "Bwd URG Flags": 0,
+      "Fwd Header Len": 320,
+      "Bwd Header Len": 256,
+      "Fwd Pkts/s": 100.0,
+      "Bwd Pkts/s": 80.0,
+      "Pkt Len Min": 0,
+      "Pkt Len Max": 1460,
+      "Pkt Len Mean": 261.0,
+      "Pkt Len Std": 400.0,
+      "Pkt Len Var": 160000.0,
+      "FIN Flag Cnt": 1,
+      "SYN Flag Cnt": 1,
+      "RST Flag Cnt": 0,
+      "PSH Flag Cnt": 4,
+      "ACK Flag Cnt": 10,
+      "URG Flag Cnt": 0,
+      "CWE Flag Count": 0,
+      "ECE Flag Cnt": 0,
+      "Down/Up Ratio": 0.8,
+      "Pkt Size Avg": 261.0,
+      "Fwd Seg Size Avg": 150.0,
+      "Bwd Seg Size Avg": 400.0,
+      "Fwd Byts/b Avg": 0,
+      "Fwd Pkts/b Avg": 0,
+      "Fwd Blk Rate Avg": 0,
+      "Bwd Byts/b Avg": 0,
+      "Bwd Pkts/b Avg": 0,
+      "Bwd Blk Rate Avg": 0,
+      "Subflow Fwd Pkts": 10,
+      "Subflow Fwd Byts": 1500,
+      "Subflow Bwd Pkts": 8,
+      "Subflow Bwd Byts": 3200,
+      "Init Fwd Win Byts": 65535,
+      "Init Bwd Win Byts": 65535,
+      "Fwd Act Data Pkts": 5,
+      "Fwd Seg Size Min": 0
+    }
+  }'
+
+{"error":"Missing 50 features","missing_features":["Total Backward Packets","Idle Max","Total Fwd Packets","Avg Bwd Segment Size","Bwd Packet Length Mean","Packet Length Mean","Idle Std","Idle Min","Fwd IAT Total","Avg Fwd Segment Size"]}
+robyspace@Mac bhanuprasad-thesis % curl -s http://3.254.149.91:5000/model/info | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+print('Feature count:', data['preprocessing']['features_count'])
+"
+
+Feature count: 69
+robyspace@Mac bhanuprasad-thesis % ssh -i ids-deploy-key.pem ubuntu@3.254.149.91 "cd ~/ids-api && python3 << 'EOF'
+import pickle
+import json
+
+features = pickle.load(open('models/feature_names.pkl', 'rb'))
+print('All', len(features), 'features:')
+print(json.dumps(list(features), indent=2))
+
+# Create sample request with all features set to 0
+sample = {f: 0 for f in features}
+print('\n\nSample request body:')
+print(json.dumps({'features': sample}, indent=2))
+EOF
+"
+
+All 69 features:
+[
+  "Protocol",
+  "Flow Duration",
+  "Total Fwd Packets",
+  "Total Backward Packets",
+  "Fwd Packets Length Total",
+  "Bwd Packets Length Total",
+  "Fwd Packet Length Max",
+  "Fwd Packet Length Min",
+  "Fwd Packet Length Mean",
+  "Fwd Packet Length Std",
+  "Bwd Packet Length Max",
+  "Bwd Packet Length Min",
+  "Bwd Packet Length Mean",
+  "Bwd Packet Length Std",
+  "Flow Bytes/s",
+  "Flow Packets/s",
+  "Flow IAT Mean",
+  "Flow IAT Std",
+  "Flow IAT Max",
+  "Flow IAT Min",
+  "Fwd IAT Total",
+  "Fwd IAT Mean",
+  "Fwd IAT Std",
+  "Fwd IAT Max",
+  "Fwd IAT Min",
+  "Bwd IAT Total",
+  "Bwd IAT Mean",
+  "Bwd IAT Std",
+  "Bwd IAT Max",
+  "Bwd IAT Min",
+  "Fwd PSH Flags",
+  "Fwd URG Flags",
+  "Fwd Header Length",
+  "Bwd Header Length",
+  "Fwd Packets/s",
+  "Bwd Packets/s",
+  "Packet Length Min",
+  "Packet Length Max",
+  "Packet Length Mean",
+  "Packet Length Std",
+  "Packet Length Variance",
+  "FIN Flag Count",
+  "SYN Flag Count",
+  "RST Flag Count",
+  "PSH Flag Count",
+  "ACK Flag Count",
+  "URG Flag Count",
+  "CWE Flag Count",
+  "ECE Flag Count",
+  "Down/Up Ratio",
+  "Avg Packet Size",
+  "Avg Fwd Segment Size",
+  "Avg Bwd Segment Size",
+  "Subflow Fwd Packets",
+  "Subflow Fwd Bytes",
+  "Subflow Bwd Packets",
+  "Subflow Bwd Bytes",
+  "Init Fwd Win Bytes",
+  "Init Bwd Win Bytes",
+  "Fwd Act Data Packets",
+  "Fwd Seg Size Min",
+  "Active Mean",
+  "Active Std",
+  "Active Max",
+  "Active Min",
+  "Idle Mean",
+  "Idle Std",
+  "Idle Max",
+  "Idle Min"
+]
+
+
+Sample request body:
+{
+  "features": {
+    "Protocol": 0,
+    "Flow Duration": 0,
+    "Total Fwd Packets": 0,
+    "Total Backward Packets": 0,
+    "Fwd Packets Length Total": 0,
+    "Bwd Packets Length Total": 0,
+    "Fwd Packet Length Max": 0,
+    "Fwd Packet Length Min": 0,
+    "Fwd Packet Length Mean": 0,
+    "Fwd Packet Length Std": 0,
+    "Bwd Packet Length Max": 0,
+    "Bwd Packet Length Min": 0,
+    "Bwd Packet Length Mean": 0,
+    "Bwd Packet Length Std": 0,
+    "Flow Bytes/s": 0,
+    "Flow Packets/s": 0,
+    "Flow IAT Mean": 0,
+    "Flow IAT Std": 0,
+    "Flow IAT Max": 0,
+    "Flow IAT Min": 0,
+    "Fwd IAT Total": 0,
+    "Fwd IAT Mean": 0,
+    "Fwd IAT Std": 0,
+    "Fwd IAT Max": 0,
+    "Fwd IAT Min": 0,
+    "Bwd IAT Total": 0,
+    "Bwd IAT Mean": 0,
+    "Bwd IAT Std": 0,
+    "Bwd IAT Max": 0,
+    "Bwd IAT Min": 0,
+    "Fwd PSH Flags": 0,
+    "Fwd URG Flags": 0,
+    "Fwd Header Length": 0,
+    "Bwd Header Length": 0,
+    "Fwd Packets/s": 0,
+    "Bwd Packets/s": 0,
+    "Packet Length Min": 0,
+    "Packet Length Max": 0,
+    "Packet Length Mean": 0,
+    "Packet Length Std": 0,
+    "Packet Length Variance": 0,
+    "FIN Flag Count": 0,
+    "SYN Flag Count": 0,
+    "RST Flag Count": 0,
+    "PSH Flag Count": 0,
+    "ACK Flag Count": 0,
+    "URG Flag Count": 0,
+    "CWE Flag Count": 0,
+    "ECE Flag Count": 0,
+    "Down/Up Ratio": 0,
+    "Avg Packet Size": 0,
+    "Avg Fwd Segment Size": 0,
+    "Avg Bwd Segment Size": 0,
+    "Subflow Fwd Packets": 0,
+    "Subflow Fwd Bytes": 0,
+    "Subflow Bwd Packets": 0,
+    "Subflow Bwd Bytes": 0,
+    "Init Fwd Win Bytes": 0,
+    "Init Bwd Win Bytes": 0,
+    "Fwd Act Data Packets": 0,
+    "Fwd Seg Size Min": 0,
+    "Active Mean": 0,
+    "Active Std": 0,
+    "Active Max": 0,
+    "Active Min": 0,
+    "Idle Mean": 0,
+    "Idle Std": 0,
+    "Idle Max": 0,
+    "Idle Min": 0
+  }
+}
+robyspace@Mac bhanuprasad-thesis % curl -X POST http://3.254.149.91:5000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+  "features": {
+    "Protocol": 6,
+    "Flow Duration": 100000,
+    "Total Fwd Packets": 10,
+    "Total Backward Packets": 8,
+    "Fwd Packets Length Total": 1500,
+    "Bwd Packets Length Total": 3200,
+    "Fwd Packet Length Max": 1460,
+    "Fwd Packet Length Min": 0,
+    "Fwd Packet Length Mean": 150.0,
+    "Fwd Packet Length Std": 200.0,
+    "Bwd Packet Length Max": 1460,
+    "Bwd Packet Length Min": 0,
+    "Bwd Packet Length Mean": 400.0,
+    "Bwd Packet Length Std": 300.0,
+    "Flow Bytes/s": 50000.0,
+    "Flow Packets/s": 180.0,
+    "Flow IAT Mean": 5555.0,
+    "Flow IAT Std": 10000.0,
+    "Flow IAT Max": 50000,
+    "Flow IAT Min": 0,
+    "Fwd IAT Total": 90000,
+    "Fwd IAT Mean": 10000.0,
+    "Fwd IAT Std": 15000.0,
+    "Fwd IAT Max": 50000,
+    "Fwd IAT Min": 0,
+    "Bwd IAT Total": 70000,
+    "Bwd IAT Mean": 10000.0,
+    "Bwd IAT Std": 12000.0,
+    "Bwd IAT Max": 40000,
+    "Bwd IAT Min": 0,
+    "Fwd PSH Flags": 0,
+    "Fwd URG Flags": 0,
+    "Fwd Header Length": 320,
+    "Bwd Header Length": 256,
+    "Fwd Packets/s": 100.0,
+    "Bwd Packets/s": 80.0,
+    "Packet Length Min": 0,
+    "Packet Length Max": 1460,
+    "Packet Length Mean": 261.0,
+    "Packet Length Std": 400.0,
+    "Packet Length Variance": 160000.0,
+    "FIN Flag Count": 1,
+    "SYN Flag Count": 1,
+    "RST Flag Count": 0,
+    "PSH Flag Count": 4,
+    "ACK Flag Count": 10,
+    "URG Flag Count": 0,
+    "CWE Flag Count": 0,
+    "ECE Flag Count": 0,
+    "Down/Up Ratio": 0.8,
+    "Avg Packet Size": 261.0,
+    "Avg Fwd Segment Size": 150.0,
+    "Avg Bwd Segment Size": 400.0,
+    "Subflow Fwd Packets": 10,
+    "Subflow Fwd Bytes": 1500,
+    "Subflow Bwd Packets": 8,
+    "Subflow Bwd Bytes": 3200,
+    "Init Fwd Win Bytes": 65535,
+    "Init Bwd Win Bytes": 65535,
+    "Fwd Act Data Packets": 5,
+    "Fwd Seg Size Min": 0,
+    "Active Mean": 5000.0,
+    "Active Std": 2000.0,
+    "Active Max": 10000,
+    "Active Min": 1000,
+    "Idle Mean": 50000.0,
+    "Idle Std": 20000.0,
+    "Idle Max": 100000,
+    "Idle Min": 10000
+  }
+}'
+
+{"confidence":0.0891638146321473,"inference_time_ms":86.0,"model_probabilities":{"random_forest":0.1478376704415674,"xgboost":0.030489958822727203},"prediction":0,"prediction_label":"Benign","timestamp":1764081960.360326}
+robyspace@Mac bhanuprasad-thesis % curl -X POST http://3.254.149.91:5000/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+  "features": {
+    "Protocol": 6,
+    "Flow Duration": 500,
+    "Total Fwd Packets": 100,
+    "Total Backward Packets": 0,
+    "Fwd Packets Length Total": 6000,
+    "Bwd Packets Length Total": 0,
+    "Fwd Packet Length Max": 60,
+    "Fwd Packet Length Min": 60,
+    "Fwd Packet Length Mean": 60.0,
+    "Fwd Packet Length Std": 0.0,
+    "Bwd Packet Length Max": 0,
+    "Bwd Packet Length Min": 0,
+    "Bwd Packet Length Mean": 0.0,
+    "Bwd Packet Length Std": 0.0,
+    "Flow Bytes/s": 12000000.0,
+    "Flow Packets/s": 200000.0,
+    "Flow IAT Mean": 5.0,
+    "Flow IAT Std": 2.0,
+    "Flow IAT Max": 10,
+    "Flow IAT Min": 1,
+    "Fwd IAT Total": 500,
+    "Fwd IAT Mean": 5.0,
+    "Fwd IAT Std": 2.0,
+    "Fwd IAT Max": 10,
+    "Fwd IAT Min": 1,
+    "Bwd IAT Total": 0,
+    "Bwd IAT Mean": 0.0,
+    "Bwd IAT Std": 0.0,
+    "Bwd IAT Max": 0,
+    "Bwd IAT Min": 0,
+    "Fwd PSH Flags": 0,
+    "Fwd URG Flags": 0,
+    "Fwd Header Length": 4000,
+    "Bwd Header Length": 0,
+    "Fwd Packets/s": 200000.0,
+    "Bwd Packets/s": 0.0,
+    "Packet Length Min": 60,
+    "Packet Length Max": 60,
+    "Packet Length Mean": 60.0,
+    "Packet Length Std": 0.0,
+    "Packet Length Variance": 0.0,
+    "FIN Flag Count": 0,
+    "SYN Flag Count": 100,
+    "RST Flag Count": 0,
+    "PSH Flag Count": 0,
+    "ACK Flag Count": 0,
+    "URG Flag Count": 0,
+    "CWE Flag Count": 0,
+    "ECE Flag Count": 0,
+    "Down/Up Ratio": 0.0,
+    "Avg Packet Size": 60.0,
+    "Avg Fwd Segment Size": 60.0,
+    "Avg Bwd Segment Size": 0.0,
+    "Subflow Fwd Packets": 100,
+    "Subflow Fwd Bytes": 6000,
+    "Subflow Bwd Packets": 0,
+    "Subflow Bwd Bytes": 0,
+    "Init Fwd Win Bytes": 1024,
+    "Init Bwd Win Bytes": 0,
+    "Fwd Act Data Packets": 0,
+    "Fwd Seg Size Min": 60,
+    "Active Mean": 0.0,
+    "Active Std": 0.0,
+    "Active Max": 0,
+    "Active Min": 0,
+    "Idle Mean": 0.0,
+    "Idle Std": 0.0,
+    "Idle Max": 0,
+    "Idle Min": 0
+  }
+}'
+
+{"confidence":0.6746670090124145,"inference_time_ms":35.93,"model_probabilities":{"random_forest":0.5375396774143247,"xgboost":0.8117943406105042},"prediction":1,"prediction_label":"Attack","timestamp":1764081998.1312466}
+robyspace@Mac bhanuprasad-thesis % curl -X POST http://3.254.149.91:5000/predict/batch \
+  -H "Content-Type: application/json" \
+  -d '{
+  "flows": [
+    {"Protocol":6,"Flow Duration":100000,"Total Fwd Packets":10,"Total Backward Packets":8,"Fwd Packets Length Total":1500,"Bwd Packets Length Total":3200,"Fwd Packet Length Max":1460,"Fwd Packet Length Min":0,"Fwd Packet Length Mean":150,"Fwd Packet Length Std":200,"Bwd Packet Length Max":1460,"Bwd Packet Length Min":0,"Bwd Packet Length Mean":400,"Bwd Packet Length Std":300,"Flow Bytes/s":50000,"Flow Packets/s":180,"Flow IAT Mean":5555,"Flow IAT Std":10000,"Flow IAT Max":50000,"Flow IAT Min":0,"Fwd IAT Total":90000,"Fwd IAT Mean":10000,"Fwd IAT Std":15000,"Fwd IAT Max":50000,"Fwd IAT Min":0,"Bwd IAT Total":70000,"Bwd IAT Mean":10000,"Bwd IAT Std":12000,"Bwd IAT Max":40000,"Bwd IAT Min":0,"Fwd PSH Flags":0,"Fwd URG Flags":0,"Fwd Header Length":320,"Bwd Header Length":256,"Fwd Packets/s":100,"Bwd Packets/s":80,"Packet Length Min":0,"Packet Length Max":1460,"Packet Length Mean":261,"Packet Length Std":400,"Packet Length Variance":160000,"FIN Flag Count":1,"SYN Flag Count":1,"RST Flag Count":0,"PSH Flag Count":4,"ACK Flag Count":10,"URG Flag Count":0,"CWE Flag Count":0,"ECE Flag Count":0,"Down/Up Ratio":0.8,"Avg Packet Size":261,"Avg Fwd Segment Size":150,"Avg Bwd Segment Size":400,"Subflow Fwd Packets":10,"Subflow Fwd Bytes":1500,"Subflow Bwd Packets":8,"Subflow Bwd Bytes":3200,"Init Fwd Win Bytes":65535,"Init Bwd Win Bytes":65535,"Fwd Act Data Packets":5,"Fwd Seg Size Min":0,"Active Mean":5000,"Active Std":2000,"Active Max":10000,"Active Min":1000,"Idle Mean":50000,"Idle Std":20000,"Idle Max":100000,"Idle Min":10000},
+    {"Protocol":6,"Flow Duration":500,"Total Fwd Packets":100,"Total Backward Packets":0,"Fwd Packets Length Total":6000,"Bwd Packets Length Total":0,"Fwd Packet Length Max":60,"Fwd Packet Length Min":60,"Fwd Packet Length Mean":60,"Fwd Packet Length Std":0,"Bwd Packet Length Max":0,"Bwd Packet Length Min":0,"Bwd Packet Length Mean":0,"Bwd Packet Length Std":0,"Flow Bytes/s":12000000,"Flow Packets/s":200000,"Flow IAT Mean":5,"Flow IAT Std":2,"Flow IAT Max":10,"Flow IAT Min":1,"Fwd IAT Total":500,"Fwd IAT Mean":5,"Fwd IAT Std":2,"Fwd IAT Max":10,"Fwd IAT Min":1,"Bwd IAT Total":0,"Bwd IAT Mean":0,"Bwd IAT Std":0,"Bwd IAT Max":0,"Bwd IAT Min":0,"Fwd PSH Flags":0,"Fwd URG Flags":0,"Fwd Header Length":4000,"Bwd Header Length":0,"Fwd Packets/s":200000,"Bwd Packets/s":0,"Packet Length Min":60,"Packet Length Max":60,"Packet Length Mean":60,"Packet Length Std":0,"Packet Length Variance":0,"FIN Flag Count":0,"SYN Flag Count":100,"RST Flag Count":0,"PSH Flag Count":0,"ACK Flag Count":0,"URG Flag Count":0,"CWE Flag Count":0,"ECE Flag Count":0,"Down/Up Ratio":0,"Avg Packet Size":60,"Avg Fwd Segment Size":60,"Avg Bwd Segment Size":0,"Subflow Fwd Packets":100,"Subflow Fwd Bytes":6000,"Subflow Bwd Packets":0,"Subflow Bwd Bytes":0,"Init Fwd Win Bytes":1024,"Init Bwd Win Bytes":0,"Fwd Act Data Packets":0,"Fwd Seg Size Min":60,"Active Mean":0,"Active Std":0,"Active Max":0,"Active Min":0,"Idle Mean":0,"Idle Std":0,"Idle Max":0,"Idle Min":0}
+  ]
+}'
+
+{"attack_count":1,"avg_time_per_flow_ms":115.83,"benign_count":1,"count":2,"inference_time_ms":231.66,"predictions":[0,1],"probabilities":[0.0891638146321473,0.6746670090124145]}
+robyspace@Mac bhanuprasad-thesis % scp -i ids-deploy-key.pem deployment/traffic_simulator.py ubuntu@3.254.149.91:~/ids-api/
+traffic_simulator.py                                                                                                                                                                                                                                    100%   33KB  84.5KB/s   00:00    
+robyspace@Mac bhanuprasad-thesis % la
+zsh: command not found: la
+robyspace@Mac bhanuprasad-thesis % ls
+aws-deployment									ids-deploy-key.pem								models
+Complete Implementation Guide - Google Colab Training → AWS Inference.md	logs										models_for_deployment.ipynb
+dataset										ML_IDS_Deep_Learning_MLP.ipynb							output.txt
+DEEP_LEARNING_GUIDE.md								ML_IDS_v2.ipynb									PRE_DEPLOYMENT_STATUS.md
+deployment									ML_IDS_v3.ipynb									processed_data
+deployment_export								ML_IDS_v4.ipynb									PRODUCTION_MODEL_SELECTION.md
+export_models_for_deployment.py							ML_IDS_v5_model_export.ipynb							results
+robyspace@Mac bhanuprasad-thesis % pip3 install requests
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: requests in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (2.32.5)
+Requirement already satisfied: charset_normalizer<4,>=2 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (3.4.4)
+Requirement already satisfied: certifi>=2017.4.17 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (2025.11.12)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (1.26.20)
+Requirement already satisfied: idna<4,>=2.5 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (3.11)
+WARNING: You are using pip version 21.2.4; however, version 25.3 is available.
+You should consider upgrading via the '/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip' command.
+robyspace@Mac bhanuprasad-thesis % python deployment/traffic_simulator.py --mode mixed --duration 60 --rate 5 --verbose
+zsh: command not found: python
+robyspace@Mac bhanuprasad-thesis % python3 deployment/traffic_simulator.py --mode mixed --duration 60 --rate 5 --verbose
+
+============================================================
+IDS Traffic Simulator
+============================================================
+Mode: mixed
+Duration: 60 seconds
+Rate: 5.0 requests/second
+API: http://3.254.149.91:5000
+============================================================
+
+Starting simulation...
+Press Ctrl+C to stop early
+
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.12 | Latency: 417.1ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.20 | Latency: 442.5ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.21 | Latency: 430.6ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 423.7ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.24 | Latency: 387.2ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.14 | Latency: 389.1ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.15 | Latency: 399.0ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.21 | Latency: 396.7ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.23 | Latency: 404.5ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.21 | Latency: 395.5ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.16 | Latency: 397.9ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.38 | Latency: 396.1ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.23 | Latency: 385.6ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.14 | Latency: 398.5ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.24 | Latency: 400.2ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.32 | Latency: 412.3ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.10 | Latency: 394.4ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.21 | Latency: 398.3ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.23 | Latency: 408.3ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.24 | Latency: 397.5ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.16 | Latency: 398.9ms
+✗ SSH Brute Force      | Actual: attack | Predicted: benign | Confidence: 0.22 | Latency: 404.1ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.14 | Latency: 399.7ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.19 | Latency: 401.8ms
+✗ UDP Flood            | Actual: attack | Predicted: benign | Confidence: 0.49 | Latency: 393.1ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.21 | Latency: 413.0ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.21 | Latency: 385.0ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.23 | Latency: 388.7ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.19 | Latency: 408.2ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.12 | Latency: 385.1ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.11 | Latency: 409.5ms
+✗ SSH Brute Force      | Actual: attack | Predicted: benign | Confidence: 0.29 | Latency: 400.1ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.25 | Latency: 400.5ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.21 | Latency: 399.8ms
+✗ UDP Flood            | Actual: attack | Predicted: benign | Confidence: 0.35 | Latency: 390.8ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.22 | Latency: 399.2ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.22 | Latency: 398.2ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.10 | Latency: 387.8ms
+✓ UDP Flood            | Actual: attack | Predicted: attack | Confidence: 0.63 | Latency: 394.7ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.14 | Latency: 397.8ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.22 | Latency: 526.3ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 405.8ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.23 | Latency: 388.3ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 384.4ms
+✗ SSH Brute Force      | Actual: attack | Predicted: benign | Confidence: 0.29 | Latency: 396.7ms
+✗ UDP Flood            | Actual: attack | Predicted: benign | Confidence: 0.46 | Latency: 390.2ms
+✗ UDP Flood            | Actual: attack | Predicted: benign | Confidence: 0.47 | Latency: 407.6ms
+✓ SYN Flood            | Actual: attack | Predicted: attack | Confidence: 0.65 | Latency: 399.6ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 389.0ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.27 | Latency: 388.7ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.22 | Latency: 386.4ms
+✗ SSH Brute Force      | Actual: attack | Predicted: benign | Confidence: 0.22 | Latency: 398.0ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.11 | Latency: 387.9ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.34 | Latency: 384.8ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.12 | Latency: 400.3ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.30 | Latency: 394.5ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.20 | Latency: 398.5ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.24 | Latency: 640.8ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.11 | Latency: 395.2ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.19 | Latency: 393.7ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.10 | Latency: 387.4ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.25 | Latency: 389.7ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.12 | Latency: 398.4ms
+✓ SYN Flood            | Actual: attack | Predicted: attack | Confidence: 0.64 | Latency: 409.3ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.19 | Latency: 400.5ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.10 | Latency: 402.3ms
+✓ SYN Flood            | Actual: attack | Predicted: attack | Confidence: 0.61 | Latency: 397.6ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.15 | Latency: 391.0ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 389.2ms
+✓ SYN Flood            | Actual: attack | Predicted: attack | Confidence: 0.63 | Latency: 394.3ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.09 | Latency: 409.1ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.26 | Latency: 403.3ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.11 | Latency: 397.5ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.17 | Latency: 413.4ms
+✓ SYN Flood            | Actual: attack | Predicted: attack | Confidence: 0.66 | Latency: 391.4ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 408.8ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.13 | Latency: 388.8ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.26 | Latency: 405.5ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.24 | Latency: 410.6ms
+✗ SSH Brute Force      | Actual: attack | Predicted: benign | Confidence: 0.22 | Latency: 401.1ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.21 | Latency: 399.0ms
+✗ UDP Flood            | Actual: attack | Predicted: benign | Confidence: 0.49 | Latency: 433.0ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.09 | Latency: 398.6ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.12 | Latency: 399.0ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.21 | Latency: 388.9ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.23 | Latency: 385.9ms
+✓ UDP Flood            | Actual: attack | Predicted: attack | Confidence: 0.50 | Latency: 388.7ms
+✓ UDP Flood            | Actual: attack | Predicted: attack | Confidence: 0.51 | Latency: 390.3ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.16 | Latency: 400.5ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.24 | Latency: 401.2ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.19 | Latency: 399.8ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.22 | Latency: 396.4ms
+✓ HTTPS Traffic        | Actual: benign | Predicted: benign | Confidence: 0.14 | Latency: 393.0ms
+✗ HTTP Flood           | Actual: attack | Predicted: benign | Confidence: 0.20 | Latency: 383.7ms
+✗ Port Scan            | Actual: attack | Predicted: benign | Confidence: 0.22 | Latency: 385.1ms
+✓ HTTP Browsing        | Actual: benign | Predicted: benign | Confidence: 0.14 | Latency: 386.7ms
+✗ Slowloris            | Actual: attack | Predicted: benign | Confidence: 0.23 | Latency: 399.7ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.25 | Latency: 390.0ms
+✓ DNS Query            | Actual: benign | Predicted: benign | Confidence: 0.23 | Latency: 389.0ms
+
+
+============================================================
+SIMULATION RESULTS
+============================================================
+
+Total Requests:     99
+Errors:             0
+Average Latency:    401.87ms
+
+Prediction Distribution:
+  Benign:           91 (91.9%)
+  Attack:           8 (8.1%)
+
+Confusion Matrix:
+  True Positives:   8
+  True Negatives:   56
+  False Positives:  0
+  False Negatives:  35
+
+Performance Metrics:
+  Accuracy:         0.6465 (64.65%)
+  Precision:        1.0000
+  Recall:           0.1860
+  F1 Score:         0.3137
+
+============================================================
+robyspace@Mac bhanuprasad-thesis % pip install pandas numpy pyarrow requests
+zsh: command not found: pip
+robyspace@Mac bhanuprasad-thesis % pip3 install pandas numpy pyarrow requests
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pandas in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (2.3.3)
+Requirement already satisfied: numpy in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (2.0.2)
+Collecting pyarrow
+  Downloading pyarrow-21.0.0-cp39-cp39-macosx_12_0_arm64.whl (31.2 MB)
+     |████████████████████████████████| 31.2 MB 12.1 MB/s 
+Requirement already satisfied: requests in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (2.32.5)
+Requirement already satisfied: tzdata>=2022.7 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from pandas) (2025.2)
+Requirement already satisfied: pytz>=2020.1 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from pandas) (2025.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: idna<4,>=2.5 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (1.26.20)
+Requirement already satisfied: certifi>=2017.4.17 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (2025.11.12)
+Requirement already satisfied: charset_normalizer<4,>=2 in /Users/robyspace/Library/Python/3.9/lib/python/site-packages (from requests) (3.4.4)
+Requirement already satisfied: six>=1.5 in /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/site-packages (from python-dateutil>=2.8.2->pandas) (1.15.0)
+Installing collected packages: pyarrow
+Successfully installed pyarrow-21.0.0
+WARNING: You are using pip version 21.2.4; however, version 25.3 is available.
+You should consider upgrading via the '/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip' command.
+robyspace@Mac bhanuprasad-thesis % python deployment/real_data_simulator.py --samples 100 --verbose
+zsh: command not found: python
+robyspace@Mac bhanuprasad-thesis % python3 deployment/real_data_simulator.py --samples 100 --verbose
+ERROR: pandas and numpy required. Install with: pip install pandas numpy pyarrow
+robyspace@Mac bhanuprasad-thesis % python --version
+zsh: command not found: python
+robyspace@Mac bhanuprasad-thesis % python3 --version
+Python 3.10.19
+robyspace@Mac bhanuprasad-thesis % python3 -m venv venv
+robyspace@Mac bhanuprasad-thesis % source venv/bin/activate
+(venv) robyspace@Mac bhanuprasad-thesis % pip3 install pandas numpy pyarrow requests
+Collecting pandas
+  Using cached pandas-2.3.3-cp310-cp310-macosx_11_0_arm64.whl.metadata (91 kB)
+Collecting numpy
+  Using cached numpy-2.2.6-cp310-cp310-macosx_14_0_arm64.whl.metadata (62 kB)
+Collecting pyarrow
+  Downloading pyarrow-22.0.0-cp310-cp310-macosx_12_0_arm64.whl.metadata (3.1 kB)
+Collecting requests
+  Using cached requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting python-dateutil>=2.8.2 (from pandas)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas)
+  Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas)
+  Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Using cached charset_normalizer-3.4.4-cp310-cp310-macosx_10_9_universal2.whl.metadata (37 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting urllib3<3,>=1.21.1 (from requests)
+  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests)
+  Using cached certifi-2025.11.12-py3-none-any.whl.metadata (2.5 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached pandas-2.3.3-cp310-cp310-macosx_11_0_arm64.whl (10.8 MB)
+Using cached numpy-2.2.6-cp310-cp310-macosx_14_0_arm64.whl (5.3 MB)
+Downloading pyarrow-22.0.0-cp310-cp310-macosx_12_0_arm64.whl (34.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.2/34.2 MB 10.2 MB/s  0:00:03
+Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Using cached charset_normalizer-3.4.4-cp310-cp310-macosx_10_9_universal2.whl (209 kB)
+Using cached idna-3.11-py3-none-any.whl (71 kB)
+Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Using cached certifi-2025.11.12-py3-none-any.whl (159 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Installing collected packages: pytz, urllib3, tzdata, six, pyarrow, numpy, idna, charset_normalizer, certifi, requests, python-dateutil, pandas
+Successfully installed certifi-2025.11.12 charset_normalizer-3.4.4 idna-3.11 numpy-2.2.6 pandas-2.3.3 pyarrow-22.0.0 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.5 six-1.17.0 tzdata-2025.2 urllib3-2.5.0
+(venv) robyspace@Mac bhanuprasad-thesis % python3 deployment/real_data_simulator.py --samples 100 --verbose
+Loading test data from processed_data...
+Traceback (most recent call last):
+  File "/Users/robyspace/Documents/GitHub/bhanuprasad-thesis/deployment/real_data_simulator.py", line 394, in <module>
+    main()
+  File "/Users/robyspace/Documents/GitHub/bhanuprasad-thesis/deployment/real_data_simulator.py", line 382, in main
+    run_simulation(
+  File "/Users/robyspace/Documents/GitHub/bhanuprasad-thesis/deployment/real_data_simulator.py", line 141, in run_simulation
+    X_test, y_test, feature_names, scaler = load_test_data(data_dir)
+  File "/Users/robyspace/Documents/GitHub/bhanuprasad-thesis/deployment/real_data_simulator.py", line 58, in load_test_data
+    scaler = pickle.load(f)
+ModuleNotFoundError: No module named 'sklearn'
+(venv) robyspace@Mac bhanuprasad-thesis % pip3 install scikit-learn==1.6.1
+Collecting scikit-learn==1.6.1
+  Downloading scikit_learn-1.6.1-cp310-cp310-macosx_12_0_arm64.whl.metadata (31 kB)
+Requirement already satisfied: numpy>=1.19.5 in ./venv/lib/python3.10/site-packages (from scikit-learn==1.6.1) (2.2.6)
+Collecting scipy>=1.6.0 (from scikit-learn==1.6.1)
+  Using cached scipy-1.15.3-cp310-cp310-macosx_14_0_arm64.whl.metadata (61 kB)
+Collecting joblib>=1.2.0 (from scikit-learn==1.6.1)
+  Using cached joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.6.1)
+  Using cached threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Downloading scikit_learn-1.6.1-cp310-cp310-macosx_12_0_arm64.whl (11.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 10.4 MB/s  0:00:01
+Using cached joblib-1.5.2-py3-none-any.whl (308 kB)
+Using cached scipy-1.15.3-cp310-cp310-macosx_14_0_arm64.whl (22.4 MB)
+Using cached threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Installing collected packages: threadpoolctl, scipy, joblib, scikit-learn
+Successfully installed joblib-1.5.2 scikit-learn-1.6.1 scipy-1.15.3 threadpoolctl-3.6.0
+(venv) robyspace@Mac bhanuprasad-thesis % python3 deployment/real_data_simulator.py --samples 100 --verbose
+Loading test data from processed_data...
+  Loaded 108501 samples
+  Features: 69
+  Benign: 57110, Attack: 51391
+
+Inverse scaling data to original feature values...
+
+============================================================
+IDS Real Data Simulator
+============================================================
+Mode: mixed
+Samples: 100
+Rate: 10 requests/second
+API: http://3.254.149.91:5000
+============================================================
+
+Starting single-request simulation...
+Press Ctrl+C to stop early
+
+✓ Sample  87040 | Actual: Benign | Predicted: Benign | Confidence: 0.002 | Latency: 384.9ms
+✓ Sample  92699 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 392.5ms
+✓ Sample 101932 | Actual: Benign | Predicted: Benign | Confidence: 0.085 | Latency: 408.2ms
+✗ Sample   2277 | Actual: Attack | Predicted: Benign | Confidence: 0.389 | Latency: 402.1ms
+✓ Sample  86381 | Actual: Benign | Predicted: Benign | Confidence: 0.285 | Latency: 410.9ms
+✓ Sample  94389 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 397.5ms
+✓ Sample  64974 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 394.1ms
+✓ Sample  88226 | Actual: Benign | Predicted: Benign | Confidence: 0.316 | Latency: 413.0ms
+✓ Sample  85329 | Actual: Benign | Predicted: Benign | Confidence: 0.004 | Latency: 399.0ms
+✗ Sample  26199 | Actual: Attack | Predicted: Benign | Confidence: 0.450 | Latency: 412.1ms
+✓ Sample  32612 | Actual: Benign | Predicted: Benign | Confidence: 0.328 | Latency: 386.9ms
+✗ Sample  89921 | Actual: Attack | Predicted: Benign | Confidence: 0.357 | Latency: 386.7ms
+✓ Sample  36907 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 406.2ms
+✓ Sample 105233 | Actual: Benign | Predicted: Benign | Confidence: 0.279 | Latency: 386.4ms
+✗ Sample  58379 | Actual: Benign | Predicted: Attack | Confidence: 0.535 | Latency: 398.2ms
+✓ Sample  91655 | Actual: Attack | Predicted: Attack | Confidence: 0.550 | Latency: 400.3ms
+✓ Sample  76541 | Actual: Benign | Predicted: Benign | Confidence: 0.001 | Latency: 387.8ms
+✓ Sample  12140 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 383.4ms
+✓ Sample  96834 | Actual: Benign | Predicted: Benign | Confidence: 0.003 | Latency: 397.0ms
+✓ Sample  19426 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 407.8ms
+✓ Sample  57375 | Actual: Benign | Predicted: Benign | Confidence: 0.032 | Latency: 402.9ms
+✓ Sample  34043 | Actual: Benign | Predicted: Benign | Confidence: 0.005 | Latency: 399.8ms
+✓ Sample  75075 | Actual: Benign | Predicted: Benign | Confidence: 0.451 | Latency: 386.5ms
+✓ Sample  10142 | Actual: Attack | Predicted: Attack | Confidence: 0.832 | Latency: 398.0ms
+✓ Sample   6856 | Actual: Benign | Predicted: Benign | Confidence: 0.059 | Latency: 391.0ms
+✓ Sample   7677 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 408.0ms
+✓ Sample   4380 | Actual: Benign | Predicted: Benign | Confidence: 0.285 | Latency: 398.0ms
+✓ Sample  43620 | Actual: Benign | Predicted: Benign | Confidence: 0.003 | Latency: 401.4ms
+✓ Sample  95996 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 382.8ms
+✓ Sample 105657 | Actual: Benign | Predicted: Benign | Confidence: 0.363 | Latency: 386.2ms
+✓ Sample  48050 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 384.3ms
+✓ Sample  62150 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 390.3ms
+✓ Sample 100353 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 407.8ms
+✓ Sample  72794 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 396.7ms
+✓ Sample  88821 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 403.0ms
+✗ Sample 101369 | Actual: Attack | Predicted: Benign | Confidence: 0.430 | Latency: 382.6ms
+✗ Sample  68496 | Actual: Benign | Predicted: Attack | Confidence: 0.913 | Latency: 406.3ms
+✓ Sample  84611 | Actual: Benign | Predicted: Benign | Confidence: 0.037 | Latency: 386.6ms
+✗ Sample  34614 | Actual: Attack | Predicted: Benign | Confidence: 0.286 | Latency: 405.3ms
+✓ Sample  20651 | Actual: Benign | Predicted: Benign | Confidence: 0.198 | Latency: 413.2ms
+✓ Sample  61562 | Actual: Benign | Predicted: Benign | Confidence: 0.005 | Latency: 399.5ms
+✓ Sample  59236 | Actual: Benign | Predicted: Benign | Confidence: 0.042 | Latency: 408.9ms
+✓ Sample  72812 | Actual: Benign | Predicted: Benign | Confidence: 0.153 | Latency: 384.5ms
+✗ Sample  48891 | Actual: Benign | Predicted: Attack | Confidence: 0.740 | Latency: 392.0ms
+✓ Sample  78565 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 401.4ms
+✓ Sample  78979 | Actual: Benign | Predicted: Benign | Confidence: 0.454 | Latency: 393.1ms
+✓ Sample  94800 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 409.4ms
+✗ Sample  63324 | Actual: Attack | Predicted: Benign | Confidence: 0.143 | Latency: 401.8ms
+✓ Sample  77963 | Actual: Benign | Predicted: Benign | Confidence: 0.334 | Latency: 392.5ms
+✓ Sample  17023 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 397.5ms
+✓ Sample  66495 | Actual: Benign | Predicted: Benign | Confidence: 0.000 | Latency: 396.3ms
+✓ Sample  74035 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 396.1ms
+✓ Sample  91937 | Actual: Benign | Predicted: Benign | Confidence: 0.219 | Latency: 387.7ms
+✓ Sample  10335 | Actual: Benign | Predicted: Benign | Confidence: 0.046 | Latency: 382.3ms
+✓ Sample  37347 | Actual: Benign | Predicted: Benign | Confidence: 0.253 | Latency: 382.7ms
+✗ Sample   3790 | Actual: Attack | Predicted: Benign | Confidence: 0.451 | Latency: 397.7ms
+✓ Sample  38502 | Actual: Benign | Predicted: Benign | Confidence: 0.322 | Latency: 412.9ms
+✓ Sample 101915 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.6ms
+✓ Sample  68489 | Actual: Benign | Predicted: Benign | Confidence: 0.443 | Latency: 390.0ms
+✓ Sample  51426 | Actual: Benign | Predicted: Benign | Confidence: 0.000 | Latency: 386.8ms
+✓ Sample  26754 | Actual: Benign | Predicted: Benign | Confidence: 0.004 | Latency: 386.3ms
+✓ Sample  82626 | Actual: Benign | Predicted: Benign | Confidence: 0.002 | Latency: 397.5ms
+✓ Sample    325 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 399.4ms
+✓ Sample  91714 | Actual: Benign | Predicted: Benign | Confidence: 0.089 | Latency: 395.1ms
+✓ Sample  64960 | Actual: Benign | Predicted: Benign | Confidence: 0.000 | Latency: 396.3ms
+✓ Sample  29822 | Actual: Benign | Predicted: Benign | Confidence: 0.034 | Latency: 397.8ms
+✓ Sample  70349 | Actual: Benign | Predicted: Benign | Confidence: 0.043 | Latency: 395.0ms
+✓ Sample  29958 | Actual: Attack | Predicted: Attack | Confidence: 0.997 | Latency: 387.3ms
+✓ Sample  88863 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 390.9ms
+✗ Sample  69445 | Actual: Attack | Predicted: Benign | Confidence: 0.416 | Latency: 408.6ms
+✓ Sample  23764 | Actual: Benign | Predicted: Benign | Confidence: 0.032 | Latency: 414.3ms
+✓ Sample  14921 | Actual: Benign | Predicted: Benign | Confidence: 0.236 | Latency: 388.9ms
+✓ Sample  88604 | Actual: Benign | Predicted: Benign | Confidence: 0.450 | Latency: 397.9ms
+✓ Sample  48948 | Actual: Benign | Predicted: Benign | Confidence: 0.220 | Latency: 388.7ms
+✓ Sample  32560 | Actual: Benign | Predicted: Benign | Confidence: 0.348 | Latency: 395.7ms
+✓ Sample  77725 | Actual: Benign | Predicted: Benign | Confidence: 0.236 | Latency: 380.6ms
+✓ Sample  25116 | Actual: Attack | Predicted: Attack | Confidence: 0.685 | Latency: 388.3ms
+✓ Sample  15040 | Actual: Benign | Predicted: Benign | Confidence: 0.246 | Latency: 388.3ms
+✓ Sample  65513 | Actual: Benign | Predicted: Benign | Confidence: 0.342 | Latency: 393.7ms
+✓ Sample  46145 | Actual: Benign | Predicted: Benign | Confidence: 0.176 | Latency: 398.0ms
+✓ Sample  11051 | Actual: Benign | Predicted: Benign | Confidence: 0.284 | Latency: 401.8ms
+✓ Sample  34951 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 398.6ms
+✓ Sample  42934 | Actual: Benign | Predicted: Benign | Confidence: 0.213 | Latency: 401.9ms
+✗ Sample  56955 | Actual: Attack | Predicted: Benign | Confidence: 0.271 | Latency: 387.1ms
+✓ Sample  16178 | Actual: Benign | Predicted: Benign | Confidence: 0.446 | Latency: 397.3ms
+✓ Sample  94875 | Actual: Benign | Predicted: Benign | Confidence: 0.059 | Latency: 397.4ms
+✓ Sample  50905 | Actual: Attack | Predicted: Attack | Confidence: 0.997 | Latency: 397.1ms
+✗ Sample  59288 | Actual: Attack | Predicted: Benign | Confidence: 0.271 | Latency: 387.4ms
+✓ Sample  79886 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 427.4ms
+✗ Sample  76993 | Actual: Attack | Predicted: Benign | Confidence: 0.468 | Latency: 394.8ms
+✓ Sample  23969 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 401.4ms
+✓ Sample  17790 | Actual: Benign | Predicted: Benign | Confidence: 0.379 | Latency: 397.1ms
+✓ Sample  16032 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 399.5ms
+✓ Sample  45012 | Actual: Benign | Predicted: Benign | Confidence: 0.337 | Latency: 410.4ms
+✗ Sample  92395 | Actual: Attack | Predicted: Benign | Confidence: 0.349 | Latency: 407.6ms
+✓ Sample  37051 | Actual: Benign | Predicted: Benign | Confidence: 0.002 | Latency: 386.4ms
+✓ Sample  80591 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 398.3ms
+✓ Sample  33002 | Actual: Attack | Predicted: Attack | Confidence: 0.973 | Latency: 400.2ms
+✓ Sample  21052 | Actual: Benign | Predicted: Benign | Confidence: 0.013 | Latency: 399.7ms
+✓ Sample  22256 | Actual: Benign | Predicted: Benign | Confidence: 0.004 | Latency: 407.0ms
+
+
+============================================================
+SIMULATION RESULTS (Real CSE-CIC-IDS-2018 Test Data)
+============================================================
+
+Total Samples Tested:  100
+Errors:                0
+Average Latency:       396.84ms
+
+Prediction Distribution:
+  Benign Predicted:    66 (66.0%)
+  Attack Predicted:    34 (34.0%)
+
+Confusion Matrix:
+  True Positives (TP):      31  (Attack correctly detected)
+  True Negatives (TN):      54  (Benign correctly identified)
+  False Positives (FP):      3  (Benign flagged as attack)
+  False Negatives (FN):     12  (Attack missed)
+
+Performance Metrics:
+  Accuracy:      0.8500  (85.00%)
+  Precision:     0.9118  (Of predicted attacks, % actually attacks)
+  Recall:        0.7209  (Of actual attacks, % detected)
+  F1 Score:      0.8052
+  Specificity:   0.9474  (Of actual benign, % correctly identified)
+  FPR:           0.0526  (False Positive Rate)
+
+============================================================
+
+Comparison with Training Results:
+  Expected Accuracy:  ~87.7%
+  Actual Accuracy:    85.00%
+  Expected Recall:    ~79.6%
+  Actual Recall:      72.09%
+
+✅ Model is performing as expected!
+============================================================
+(venv) robyspace@Mac bhanuprasad-thesis % python deployment/real_data_simulator.py --samples 500 --rate 20
+Loading test data from processed_data...
+  Loaded 108501 samples
+  Features: 69
+  Benign: 57110, Attack: 51391
+
+Inverse scaling data to original feature values...
+
+============================================================
+IDS Real Data Simulator
+============================================================
+Mode: mixed
+Samples: 500
+Rate: 20.0 requests/second
+API: http://3.254.149.91:5000
+============================================================
+
+Starting single-request simulation...
+Press Ctrl+C to stop early
+
+Progress: 500/500 samples | Accuracy: 90.2%
+
+============================================================
+SIMULATION RESULTS (Real CSE-CIC-IDS-2018 Test Data)
+============================================================
+
+Total Samples Tested:  500
+Errors:                0
+Average Latency:       402.86ms
+
+Prediction Distribution:
+  Benign Predicted:    299 (59.8%)
+  Attack Predicted:    201 (40.2%)
+
+Confusion Matrix:
+  True Positives (TP):     192  (Attack correctly detected)
+  True Negatives (TN):     259  (Benign correctly identified)
+  False Positives (FP):      9  (Benign flagged as attack)
+  False Negatives (FN):     40  (Attack missed)
+
+Performance Metrics:
+  Accuracy:      0.9020  (90.20%)
+  Precision:     0.9552  (Of predicted attacks, % actually attacks)
+  Recall:        0.8276  (Of actual attacks, % detected)
+  F1 Score:      0.8868
+  Specificity:   0.9664  (Of actual benign, % correctly identified)
+  FPR:           0.0336  (False Positive Rate)
+
+============================================================
+
+Comparison with Training Results:
+  Expected Accuracy:  ~87.7%
+  Actual Accuracy:    90.20%
+  Expected Recall:    ~79.6%
+  Actual Recall:      82.76%
+
+✅ Model is performing as expected!
+============================================================
+(venv) robyspace@Mac bhanuprasad-thesis % python deployment/real_data_simulator.py --samples 200 --mode attack --verbose
+Loading test data from processed_data...
+  Loaded 108501 samples
+  Features: 69
+  Benign: 57110, Attack: 51391
+
+Inverse scaling data to original feature values...
+Filtered to 51391 attack samples
+
+============================================================
+IDS Real Data Simulator
+============================================================
+Mode: attack
+Samples: 200
+Rate: 10 requests/second
+API: http://3.254.149.91:5000
+============================================================
+
+Starting single-request simulation...
+Press Ctrl+C to stop early
+
+✓ Sample   8222 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 399.8ms
+✓ Sample  19890 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 384.0ms
+✓ Sample   2296 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 391.4ms
+✗ Sample  47459 | Actual: Attack | Predicted: Benign | Confidence: 0.466 | Latency: 397.8ms
+✓ Sample  34863 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 384.1ms
+✗ Sample  29739 | Actual: Attack | Predicted: Benign | Confidence: 0.264 | Latency: 398.0ms
+✓ Sample  49470 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 429.3ms
+✓ Sample  23012 | Actual: Attack | Predicted: Attack | Confidence: 0.640 | Latency: 400.3ms
+✓ Sample  42861 | Actual: Attack | Predicted: Attack | Confidence: 0.852 | Latency: 401.5ms
+✓ Sample  33746 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 386.6ms
+✗ Sample  35356 | Actual: Attack | Predicted: Benign | Confidence: 0.278 | Latency: 402.2ms
+✓ Sample  41876 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 384.8ms
+✓ Sample  37641 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 391.9ms
+✓ Sample  50407 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 390.0ms
+✗ Sample   3753 | Actual: Attack | Predicted: Benign | Confidence: 0.298 | Latency: 462.2ms
+✓ Sample  45602 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 469.0ms
+✓ Sample  20651 | Actual: Attack | Predicted: Attack | Confidence: 0.985 | Latency: 545.6ms
+✓ Sample   7706 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 426.3ms
+✓ Sample  27276 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 410.6ms
+✗ Sample  25775 | Actual: Attack | Predicted: Benign | Confidence: 0.317 | Latency: 424.7ms
+✓ Sample  12569 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 385.7ms
+✓ Sample  27121 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 403.6ms
+✓ Sample  39642 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 387.7ms
+✓ Sample  47730 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 398.4ms
+✓ Sample  16504 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 411.4ms
+✓ Sample  27812 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 411.9ms
+✗ Sample  33826 | Actual: Attack | Predicted: Benign | Confidence: 0.220 | Latency: 396.6ms
+✓ Sample   4069 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 404.5ms
+✓ Sample   7606 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 388.0ms
+✗ Sample   5191 | Actual: Attack | Predicted: Benign | Confidence: 0.373 | Latency: 382.9ms
+✓ Sample  18449 | Actual: Attack | Predicted: Attack | Confidence: 0.991 | Latency: 394.9ms
+✓ Sample    407 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 397.4ms
+✓ Sample  16855 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 407.9ms
+✗ Sample  36377 | Actual: Attack | Predicted: Benign | Confidence: 0.346 | Latency: 395.2ms
+✓ Sample  23256 | Actual: Attack | Predicted: Attack | Confidence: 0.973 | Latency: 386.7ms
+✓ Sample    308 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 398.8ms
+✓ Sample  41848 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 392.1ms
+✓ Sample  21161 | Actual: Attack | Predicted: Attack | Confidence: 0.994 | Latency: 388.5ms
+✓ Sample  44209 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 400.8ms
+✓ Sample   6392 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 396.9ms
+✗ Sample  45708 | Actual: Attack | Predicted: Benign | Confidence: 0.357 | Latency: 389.0ms
+✓ Sample  34729 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 386.2ms
+✗ Sample  25108 | Actual: Attack | Predicted: Benign | Confidence: 0.203 | Latency: 396.7ms
+✓ Sample   4413 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 398.8ms
+✓ Sample  32782 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 403.7ms
+✓ Sample  11673 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 395.6ms
+✗ Sample  44689 | Actual: Attack | Predicted: Benign | Confidence: 0.317 | Latency: 401.4ms
+✓ Sample   9325 | Actual: Attack | Predicted: Attack | Confidence: 0.509 | Latency: 445.8ms
+✓ Sample  43920 | Actual: Attack | Predicted: Attack | Confidence: 0.587 | Latency: 404.4ms
+✗ Sample  33427 | Actual: Attack | Predicted: Benign | Confidence: 0.436 | Latency: 398.3ms
+✓ Sample  30166 | Actual: Attack | Predicted: Attack | Confidence: 0.625 | Latency: 384.3ms
+✓ Sample  43458 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.3ms
+✗ Sample  46746 | Actual: Attack | Predicted: Benign | Confidence: 0.298 | Latency: 400.3ms
+✓ Sample  45941 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.0ms
+✗ Sample  27906 | Actual: Attack | Predicted: Benign | Confidence: 0.146 | Latency: 400.8ms
+✓ Sample  44370 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 400.6ms
+✓ Sample  23250 | Actual: Attack | Predicted: Attack | Confidence: 0.562 | Latency: 398.9ms
+✓ Sample   3562 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 384.9ms
+✗ Sample  22363 | Actual: Attack | Predicted: Benign | Confidence: 0.461 | Latency: 393.2ms
+✓ Sample   7124 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 399.2ms
+✓ Sample  26415 | Actual: Attack | Predicted: Attack | Confidence: 0.510 | Latency: 396.0ms
+✓ Sample  20279 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 397.1ms
+✓ Sample   2542 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 386.5ms
+✓ Sample  34146 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 388.5ms
+✓ Sample  32126 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 383.7ms
+✓ Sample  11789 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 405.9ms
+✓ Sample  45743 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 399.1ms
+✓ Sample  34948 | Actual: Attack | Predicted: Attack | Confidence: 0.995 | Latency: 383.3ms
+✓ Sample  48161 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.6ms
+✓ Sample  11992 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 392.0ms
+✓ Sample  16161 | Actual: Attack | Predicted: Attack | Confidence: 0.996 | Latency: 398.9ms
+✓ Sample   7601 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 403.6ms
+✓ Sample  22637 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 394.5ms
+✗ Sample  13590 | Actual: Attack | Predicted: Benign | Confidence: 0.218 | Latency: 389.0ms
+✗ Sample  25465 | Actual: Attack | Predicted: Benign | Confidence: 0.440 | Latency: 388.0ms
+✓ Sample  38927 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 395.1ms
+✓ Sample  26068 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 385.2ms
+✗ Sample  29726 | Actual: Attack | Predicted: Benign | Confidence: 0.409 | Latency: 399.7ms
+✓ Sample  13306 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 397.4ms
+✗ Sample  22268 | Actual: Attack | Predicted: Benign | Confidence: 0.289 | Latency: 401.0ms
+✓ Sample  43310 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 414.1ms
+✗ Sample   8202 | Actual: Attack | Predicted: Benign | Confidence: 0.240 | Latency: 383.1ms
+✓ Sample  13132 | Actual: Attack | Predicted: Attack | Confidence: 0.661 | Latency: 388.4ms
+✓ Sample  26450 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 388.7ms
+✓ Sample  37806 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 383.1ms
+✓ Sample  15836 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.1ms
+✓ Sample  16049 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 401.6ms
+✓ Sample  20534 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 393.2ms
+✓ Sample  14461 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 398.6ms
+✗ Sample    589 | Actual: Attack | Predicted: Benign | Confidence: 0.248 | Latency: 387.0ms
+✓ Sample   7892 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 399.3ms
+✓ Sample  13656 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 386.7ms
+✗ Sample  49589 | Actual: Attack | Predicted: Benign | Confidence: 0.136 | Latency: 387.2ms
+✓ Sample   9482 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 412.7ms
+✓ Sample  34103 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 396.9ms
+✗ Sample  37611 | Actual: Attack | Predicted: Benign | Confidence: 0.419 | Latency: 400.8ms
+✓ Sample  30092 | Actual: Attack | Predicted: Attack | Confidence: 0.526 | Latency: 409.3ms
+✓ Sample  39303 | Actual: Attack | Predicted: Attack | Confidence: 0.735 | Latency: 395.7ms
+✓ Sample   7563 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 410.7ms
+✓ Sample  48444 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 398.1ms
+✓ Sample  13800 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 385.0ms
+✗ Sample  24626 | Actual: Attack | Predicted: Benign | Confidence: 0.311 | Latency: 389.6ms
+✓ Sample   1320 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 396.4ms
+✓ Sample  28617 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 393.9ms
+✓ Sample   1267 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 404.3ms
+✗ Sample  34392 | Actual: Attack | Predicted: Benign | Confidence: 0.323 | Latency: 399.3ms
+✓ Sample   2326 | Actual: Attack | Predicted: Attack | Confidence: 0.966 | Latency: 397.0ms
+✗ Sample  21003 | Actual: Attack | Predicted: Benign | Confidence: 0.232 | Latency: 387.5ms
+✓ Sample  44479 | Actual: Attack | Predicted: Attack | Confidence: 0.996 | Latency: 383.6ms
+✗ Sample  16271 | Actual: Attack | Predicted: Benign | Confidence: 0.306 | Latency: 385.1ms
+✓ Sample  11491 | Actual: Attack | Predicted: Attack | Confidence: 0.969 | Latency: 388.8ms
+✗ Sample    827 | Actual: Attack | Predicted: Benign | Confidence: 0.434 | Latency: 408.6ms
+✗ Sample  24906 | Actual: Attack | Predicted: Benign | Confidence: 0.472 | Latency: 402.8ms
+✓ Sample  23023 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 393.4ms
+✓ Sample  16908 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 397.9ms
+✓ Sample  21498 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 400.0ms
+✓ Sample  42239 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 391.1ms
+✓ Sample  28177 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 387.4ms
+✓ Sample  15059 | Actual: Attack | Predicted: Attack | Confidence: 0.916 | Latency: 387.1ms
+✓ Sample  28299 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 386.0ms
+✗ Sample  34493 | Actual: Attack | Predicted: Benign | Confidence: 0.324 | Latency: 396.4ms
+✓ Sample  49020 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 389.6ms
+✓ Sample  12248 | Actual: Attack | Predicted: Attack | Confidence: 0.636 | Latency: 412.6ms
+✓ Sample  20286 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 399.9ms
+✓ Sample  11797 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.7ms
+✓ Sample  23060 | Actual: Attack | Predicted: Attack | Confidence: 0.994 | Latency: 415.3ms
+✓ Sample  21891 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 389.6ms
+✓ Sample  25431 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 383.1ms
+✓ Sample  12451 | Actual: Attack | Predicted: Attack | Confidence: 0.992 | Latency: 394.5ms
+✓ Sample  16958 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 393.3ms
+✓ Sample  48418 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 399.9ms
+✓ Sample  27930 | Actual: Attack | Predicted: Attack | Confidence: 0.826 | Latency: 397.2ms
+✓ Sample  23053 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 386.6ms
+✓ Sample  20395 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 399.4ms
+✓ Sample   2576 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 432.4ms
+✗ Sample  39059 | Actual: Attack | Predicted: Benign | Confidence: 0.230 | Latency: 436.5ms
+✓ Sample   3771 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 413.1ms
+✓ Sample  32156 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 403.0ms
+✓ Sample  43919 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 416.5ms
+✗ Sample  50126 | Actual: Attack | Predicted: Benign | Confidence: 0.374 | Latency: 391.1ms
+✓ Sample  12276 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 399.0ms
+✓ Sample  31144 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 398.9ms
+✗ Sample  23267 | Actual: Attack | Predicted: Benign | Confidence: 0.413 | Latency: 398.6ms
+✗ Sample   3318 | Actual: Attack | Predicted: Benign | Confidence: 0.316 | Latency: 410.9ms
+✓ Sample  19778 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 407.7ms
+✓ Sample  19971 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 399.5ms
+✓ Sample  42192 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 405.4ms
+✓ Sample   4949 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 393.2ms
+✓ Sample   9365 | Actual: Attack | Predicted: Attack | Confidence: 0.968 | Latency: 383.2ms
+✓ Sample  50538 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 395.6ms
+✓ Sample  31301 | Actual: Attack | Predicted: Attack | Confidence: 0.993 | Latency: 388.1ms
+✓ Sample   2842 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 384.1ms
+✓ Sample  34889 | Actual: Attack | Predicted: Attack | Confidence: 0.962 | Latency: 397.8ms
+✓ Sample  20302 | Actual: Attack | Predicted: Attack | Confidence: 0.845 | Latency: 408.9ms
+✓ Sample  48237 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 408.9ms
+✓ Sample  11544 | Actual: Attack | Predicted: Attack | Confidence: 0.530 | Latency: 397.7ms
+✓ Sample  37077 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 387.2ms
+✓ Sample  45222 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 389.7ms
+✓ Sample  44736 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 398.1ms
+✓ Sample   9129 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 403.4ms
+✓ Sample  30684 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 408.1ms
+✗ Sample   5080 | Actual: Attack | Predicted: Benign | Confidence: 0.223 | Latency: 389.6ms
+✓ Sample  18694 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 385.7ms
+✗ Sample  45012 | Actual: Attack | Predicted: Benign | Confidence: 0.226 | Latency: 395.1ms
+✓ Sample   6396 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 391.6ms
+✗ Sample   5607 | Actual: Attack | Predicted: Benign | Confidence: 0.277 | Latency: 411.3ms
+✓ Sample  19969 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 400.4ms
+✓ Sample  15774 | Actual: Attack | Predicted: Attack | Confidence: 0.976 | Latency: 411.4ms
+✓ Sample   1200 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 395.7ms
+✓ Sample  26703 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 385.2ms
+✗ Sample  24941 | Actual: Attack | Predicted: Benign | Confidence: 0.411 | Latency: 387.0ms
+✓ Sample  36409 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 388.7ms
+✓ Sample   3576 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 395.6ms
+✓ Sample   5196 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 396.4ms
+✓ Sample   3020 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 402.4ms
+✓ Sample  42902 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 391.9ms
+✓ Sample   4442 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 389.1ms
+✓ Sample   6377 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 385.2ms
+✓ Sample  37496 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 397.6ms
+✓ Sample  10258 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 404.2ms
+✓ Sample  44834 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 402.1ms
+✓ Sample  45529 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 400.3ms
+✓ Sample  17284 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 395.3ms
+✓ Sample  43289 | Actual: Attack | Predicted: Attack | Confidence: 0.998 | Latency: 386.2ms
+✓ Sample  28838 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 385.9ms
+✗ Sample  19527 | Actual: Attack | Predicted: Benign | Confidence: 0.325 | Latency: 401.9ms
+✓ Sample  14086 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 396.9ms
+✓ Sample  23652 | Actual: Attack | Predicted: Attack | Confidence: 0.996 | Latency: 394.4ms
+✓ Sample  42883 | Actual: Attack | Predicted: Attack | Confidence: 0.986 | Latency: 396.5ms
+✓ Sample   7912 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 401.5ms
+✓ Sample  18495 | Actual: Attack | Predicted: Attack | Confidence: 0.999 | Latency: 392.4ms
+✗ Sample  21202 | Actual: Attack | Predicted: Benign | Confidence: 0.407 | Latency: 386.0ms
+✗ Sample   7839 | Actual: Attack | Predicted: Benign | Confidence: 0.453 | Latency: 396.9ms
+✓ Sample  27040 | Actual: Attack | Predicted: Attack | Confidence: 0.976 | Latency: 385.1ms
+✓ Sample  36415 | Actual: Attack | Predicted: Attack | Confidence: 0.991 | Latency: 398.1ms
+✓ Sample  38850 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 400.1ms
+✓ Sample  32283 | Actual: Attack | Predicted: Attack | Confidence: 1.000 | Latency: 399.4ms
+✗ Sample   2581 | Actual: Attack | Predicted: Benign | Confidence: 0.264 | Latency: 397.2ms
+✗ Sample  39102 | Actual: Attack | Predicted: Benign | Confidence: 0.376 | Latency: 396.7ms
+✓ Sample  23308 | Actual: Attack | Predicted: Attack | Confidence: 0.722 | Latency: 385.7ms
+
+
+============================================================
+SIMULATION RESULTS (Real CSE-CIC-IDS-2018 Test Data)
+============================================================
+
+Total Samples Tested:  200
+Errors:                0
+Average Latency:       398.40ms
+
+Prediction Distribution:
+  Benign Predicted:    43 (21.5%)
+  Attack Predicted:    157 (78.5%)
+
+Confusion Matrix:
+  True Positives (TP):     157  (Attack correctly detected)
+  True Negatives (TN):       0  (Benign correctly identified)
+  False Positives (FP):      0  (Benign flagged as attack)
+  False Negatives (FN):     43  (Attack missed)
+
+Performance Metrics:
+  Accuracy:      0.7850  (78.50%)
+  Precision:     1.0000  (Of predicted attacks, % actually attacks)
+  Recall:        0.7850  (Of actual attacks, % detected)
+  F1 Score:      0.8796
+  Specificity:   0.0000  (Of actual benign, % correctly identified)
+  FPR:           0.0000  (False Positive Rate)
+
+============================================================
+
+Comparison with Training Results:
+  Expected Accuracy:  ~87.7%
+  Actual Accuracy:    78.50%
+  Expected Recall:    ~79.6%
+  Actual Recall:      78.50%
+
+⚠️ Model performance is slightly below expected.
+============================================================
+(venv) robyspace@Mac bhanuprasad-thesis % python deployment/real_data_simulator.py --samples 1000 --batch-size 100
+Loading test data from processed_data...
+  Loaded 108501 samples
+  Features: 69
+  Benign: 57110, Attack: 51391
+
+Inverse scaling data to original feature values...
+
+============================================================
+IDS Real Data Simulator
+============================================================
+Mode: mixed
+Samples: 1000
+Rate: 10 requests/second
+API: http://3.254.149.91:5000
+============================================================
+
+Starting batch simulation (batch size: 100)...
+Press Ctrl+C to stop early
+
+Progress: 1000/1000 samples
+
+============================================================
+SIMULATION RESULTS (Real CSE-CIC-IDS-2018 Test Data)
+============================================================
+
+Total Samples Tested:  1000
+Errors:                0
+Average Latency:       9.85ms
+
+Prediction Distribution:
+  Benign Predicted:    600 (60.0%)
+  Attack Predicted:    400 (40.0%)
+
+Confusion Matrix:
+  True Positives (TP):     379  (Attack correctly detected)
+  True Negatives (TN):     492  (Benign correctly identified)
+  False Positives (FP):     21  (Benign flagged as attack)
+  False Negatives (FN):    108  (Attack missed)
+
+Performance Metrics:
+  Accuracy:      0.8710  (87.10%)
+  Precision:     0.9475  (Of predicted attacks, % actually attacks)
+  Recall:        0.7782  (Of actual attacks, % detected)
+  F1 Score:      0.8546
+  Specificity:   0.9591  (Of actual benign, % correctly identified)
+  FPR:           0.0409  (False Positive Rate)
+
+============================================================
+
+Comparison with Training Results:
+  Expected Accuracy:  ~87.7%
+  Actual Accuracy:    87.10%
+  Expected Recall:    ~79.6%
+  Actual Recall:      77.82%
+
+✅ Model is performing as expected!
+============================================================
+(venv) robyspace@Mac bhanuprasad-thesis % 
